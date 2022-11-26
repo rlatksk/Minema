@@ -20,7 +20,6 @@ public class GUIMINEMA {
         hm.pack();
         hm.setLocationRelativeTo(null);
         hm.setDefaultCloseOperation(Home.EXIT_ON_CLOSE);
-        System.out.print("Aku sloth");
     }
     
 }
