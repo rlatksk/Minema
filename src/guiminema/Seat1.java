@@ -117,7 +117,7 @@ public class Seat1 extends javax.swing.JFrame {
 
         jLabel3.setText("Weekends: Rp. 50.000,-");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10:00a", "16:00" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10:00", "16:00" }));
 
         jLabel4.setText("Jam Tayang  : ");
 
