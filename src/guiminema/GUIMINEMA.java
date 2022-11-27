@@ -20,6 +20,7 @@ public class GUIMINEMA {
         hm.pack();
         hm.setLocationRelativeTo(null);
         hm.setDefaultCloseOperation(Home.EXIT_ON_CLOSE);
+        hm.setResizable(false);
         
         Movie mv1 = new Movie("Black Panther", "17.00");
         Movie mv2 = new Movie("Midnight in Paris", "13.20");
