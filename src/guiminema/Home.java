@@ -130,23 +130,22 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Seat1 st1 = new Seat1();
-        st1.setVisible(true);
+        Seat3 st3 = new Seat3();
+        st3.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-//        close();
-        Seat1 st2 = new Seat1();
-        st2.setVisible(true);
+        Seat1 st1 = new Seat1();
+        st1.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Seat1 st3 = new Seat1();
-        st3.setVisible(true);
+        Seat2 st2 = new Seat2();
+        st2.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        Seat1 st4 = new Seat1();
+        Seat4 st4 = new Seat4();
         st4.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 

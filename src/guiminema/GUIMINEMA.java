@@ -20,6 +20,9 @@ public class GUIMINEMA {
         hm.pack();
         hm.setLocationRelativeTo(null);
         hm.setDefaultCloseOperation(Home.EXIT_ON_CLOSE);
+        
+        Movie mv = new Movie("Black Panther", "17.00 - 19.14");
+        System.out.println(mv);
     }
     
 }
