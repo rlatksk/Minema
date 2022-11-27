@@ -47,6 +47,7 @@ public class Seat1 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jToggleButton1.setText("A1");
         jToggleButton1.setPreferredSize(new java.awt.Dimension(50, 24));
