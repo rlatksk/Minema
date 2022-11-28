@@ -103,6 +103,11 @@ public class Seat1 extends javax.swing.JFrame {
 
         jToggleButton13.setText("D1");
         jToggleButton13.setPreferredSize(new java.awt.Dimension(50, 24));
+        jToggleButton13.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jToggleButton13ItemStateChanged(evt);
+            }
+        });
 
         jToggleButton14.setText("D2");
         jToggleButton14.setPreferredSize(new java.awt.Dimension(50, 24));
@@ -122,6 +127,11 @@ public class Seat1 extends javax.swing.JFrame {
         jLabel4.setText("Jam Tayang  : ");
 
         jButton1.setText("Print...");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -237,6 +247,46 @@ public class Seat1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton12ActionPerformed
 
+    private void jToggleButton13ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jToggleButton13ItemStateChanged
+        
+    }//GEN-LAST:event_jToggleButton13ItemStateChanged
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if(jToggleButton1.isSelected())
+            jToggleButton1.setEnabled(false);
+        if(jToggleButton2.isSelected())
+            jToggleButton2.setEnabled(false);
+        if(jToggleButton3.isSelected())
+            jToggleButton3.setEnabled(false);
+        if(jToggleButton4.isSelected())
+            jToggleButton4.setEnabled(false);
+        if(jToggleButton5.isSelected())
+            jToggleButton5.setEnabled(false);
+        if(jToggleButton6.isSelected())
+            jToggleButton6.setEnabled(false);
+        if(jToggleButton7.isSelected())
+            jToggleButton7.setEnabled(false);
+        if(jToggleButton8.isSelected())
+            jToggleButton8.setEnabled(false);
+        if(jToggleButton9.isSelected())
+            jToggleButton9.setEnabled(false);
+        if(jToggleButton10.isSelected())
+            jToggleButton10.setEnabled(false);
+        if(jToggleButton11.isSelected())
+            jToggleButton11.setEnabled(false);
+        if(jToggleButton12.isSelected())
+            jToggleButton12.setEnabled(false);
+        if(jToggleButton13.isSelected())
+            jToggleButton13.setEnabled(false);
+        if(jToggleButton14.isSelected())
+            jToggleButton14.setEnabled(false);
+        if(jToggleButton15.isSelected())
+            jToggleButton15.setEnabled(false);
+        if(jToggleButton16.isSelected())
+            jToggleButton16.setEnabled(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
