@@ -4,7 +4,10 @@
  */
 package guiminema;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,7 +19,95 @@ public class Seat1 extends javax.swing.JFrame {
      * Creates new form Seat
      */
     public Seat1() {
+        
         initComponents();
+        ButtonHandler btnHandler = new ButtonHandler();
+        jButton1.addActionListener(btnHandler);
+    }
+    
+    private class ButtonHandler implements ActionListener {
+        
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(jToggleButton1.isSelected()){
+                seat = seat + "A1 ";
+                count++;
+        }  
+            if(jToggleButton2.isSelected()){
+                seat = seat + "A2 ";
+                count++;
+        }  
+            if(jToggleButton3.isSelected()){
+                seat = seat + "A3 ";
+                count++;
+        }  
+            if(jToggleButton4.isSelected()){
+                seat = seat + "A4 ";
+                count++;
+        }  
+            if(jToggleButton5.isSelected()){
+                seat = seat + "B1 ";
+                count++;
+        }  
+            if(jToggleButton6.isSelected()){
+                seat = seat + "B2 ";
+                count++;
+        }  
+            if(jToggleButton7.isSelected()){
+                seat = seat + "B3 ";
+                count++;
+        }  
+            if(jToggleButton8.isSelected()){
+                seat = seat + "B4 ";
+                count++;
+        }  
+            if(jToggleButton9.isSelected()){
+                seat = seat + "C1 ";
+                count++;
+        }  
+            if(jToggleButton10.isSelected()){
+                seat = seat + "C2 ";
+                count++;
+        }  
+            if(jToggleButton11.isSelected()){
+                seat = seat + "C3 ";
+                count++;
+        }  
+            if(jToggleButton12.isSelected()){
+                seat = seat + "C4 ";
+                count++;
+        }  
+            if(jToggleButton13.isSelected()){
+                seat = seat + "D1 ";
+                count++;
+        }  
+            if(jToggleButton14.isSelected()){
+                seat = seat + "D2 ";
+                count++;
+        }  
+            if(jToggleButton15.isSelected()){
+                seat = seat + "D3 ";
+                count++;
+        }  
+            if(jToggleButton16.isSelected()){
+                seat = seat + "D4 ";
+                count++;
+        }
+            
+            count = count - count1;
+            seat = seat.replace(seat1, "");
+            System.out.println(seat);
+            System.out.println(seat1);
+            String title = "Black Panther";
+            int  price = count * 30000;
+            String time = jComboBox1.getSelectedItem().toString();
+            JOptionPane.showMessageDialog(Seat1.this, "Movie Name : Black Panther" + "\n" + "Time : " + time + "\n" + "Seats : " + seat + "\n" + "Price : " + price);
+            count1 = count1 + count;
+            seat1 = seat1 + seat;
+            count = 0;
+            seat = "";
+            
+        }
     }
 
     /**
@@ -276,8 +367,6 @@ public class Seat1 extends javax.swing.JFrame {
             jToggleButton15.setEnabled(false);
         if(jToggleButton16.isSelected())
             jToggleButton16.setEnabled(false);
-        
-        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
@@ -343,4 +432,8 @@ public class Seat1 extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton8;
     private javax.swing.JToggleButton jToggleButton9;
     // End of variables declaration//GEN-END:variables
+    private String seat = "";
+    private String seat1 = "";
+    private int count = 0;
+    private int count1 = 0;
 }
