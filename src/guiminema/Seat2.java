@@ -90,9 +90,15 @@ public class Seat2 extends javax.swing.JFrame {
             if(jToggleButton16.isSelected()){
                 seat = seat + "D4 ";
                 count++;
-        }  
+        }
+            
+            for(int i=0; i<seatStrLen/3; i++){
+                int j = i*3;
+                seatTemp[i] = seat1.substring(j,j+3);
+                seat = seat.replace(seatTemp[i], "");
+            }
+            
             count = count - count1;
-            seat = seat.replace(seat1, "");
             int  price = count * 30000;
             String time = jComboBox1.getSelectedItem().toString();
             JOptionPane.showMessageDialog(Seat2.this,"Movie Name : Midnight in Paris" + "\n" + "Time : " + time + "\n" + "Seats : " + seat + "\n" + "Price : " + price);
@@ -100,6 +106,7 @@ public class Seat2 extends javax.swing.JFrame {
             seat1 = seat1 + seat;
             count = 0;
             seat = "";
+            seatStrLen = seat1.length();
         }
     }
 
@@ -202,7 +209,7 @@ public class Seat2 extends javax.swing.JFrame {
         jToggleButton16.setText("D4");
         jToggleButton16.setPreferredSize(new java.awt.Dimension(50, 24));
 
-        jLabel4.setText("Jam Tayang : ");
+        jLabel4.setText("Jam Tayang  : ");
         jLabel4.setPreferredSize(new java.awt.Dimension(74, 16));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "13.00", "19.00" }));
@@ -258,11 +265,11 @@ public class Seat2 extends javax.swing.JFrame {
                     .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(101, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(189, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(47, 47, 47))
@@ -271,7 +278,9 @@ public class Seat2 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(35, 35, 35)
@@ -298,8 +307,7 @@ public class Seat2 extends javax.swing.JFrame {
                             .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(42, 42, 42)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(21, 21, 21))
@@ -417,6 +425,8 @@ public class Seat2 extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     private String seat = "";
     private String seat1 = "";
+    private String[] seatTemp = {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""};
     private int count = 0;
     private int count1 = 0;
+    private int seatStrLen = 0;
 }

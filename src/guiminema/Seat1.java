@@ -93,11 +93,14 @@ public class Seat1 extends javax.swing.JFrame {
                 seat = seat + "D4 ";
                 count++;
         }
-            
+
+            for(int i=0; i<seatStrLen/3; i++){
+                int j = i*3;
+                seatTemp[i] = seat1.substring(j,j+3);
+                seat = seat.replace(seatTemp[i], "");
+            }
+
             count = count - count1;
-            seat = seat.replace(seat1, "");
-            System.out.println(seat);
-            System.out.println(seat1);
             String title = "Black Panther";
             int  price = count * 30000;
             String time = jComboBox1.getSelectedItem().toString();
@@ -106,7 +109,7 @@ public class Seat1 extends javax.swing.JFrame {
             seat1 = seat1 + seat;
             count = 0;
             seat = "";
-            
+            seatStrLen = seat1.length();
         }
     }
 
@@ -434,6 +437,8 @@ public class Seat1 extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     private String seat = "";
     private String seat1 = "";
+    private String[] seatTemp = {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""};
     private int count = 0;
     private int count1 = 0;
+    private int seatStrLen = 0;
 }
