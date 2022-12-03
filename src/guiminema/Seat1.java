@@ -449,9 +449,6 @@ public class Seat1 extends javax.swing.JFrame {
                         int j = i*3;
                         seatTemp[i] = seat1.substring(j,j+3);
                     }
-                    for(int i=0; i<16; i++){
-                        System.out.println(seatTemp[i]);
-                    }
                     for(int i=0; i<16 ; i++){
                         if("A1 ".equals(seatTemp[i])){
                             jToggleButton1.setSelected(true);
@@ -560,9 +557,6 @@ public class Seat1 extends javax.swing.JFrame {
                     for(int i=0; i<seatStrLen2/3; i++){
                         int j = i*3;
                         seatTemp[i] = seat2.substring(j,j+3);
-                    }
-                    for(int i=0; i<16; i++){
-                        System.out.println(seatTemp[i]);
                     }
                     for(int i=0; i<16 ; i++){
                         if("A1 ".equals(seatTemp[i])){
