@@ -93,13 +93,28 @@ public class Seat2 extends javax.swing.JFrame {
                 count++;
         }
             
-            for(int i=0; i<seatStrLen/3; i++){
-                int j = i*3;
-                seatTemp[i] = seat1.substring(j,j+3);
-                seat = seat.replace(seatTemp[i], "");
-            }
+            String time = jComboBox1.getSelectedItem().toString();
             
-            count = count - count1;
+            switch(time){
+                case "13:00" ->  {
+                    for(int i=0; i<seatStrLen1/3; i++){
+                        int j = i*3;
+                        seatTemp[i] = seat1.substring(j,j+3);
+                        seat = seat.replace(seatTemp[i], "");
+                    }
+                    count = count - count1;
+                    seat = seat.replace(seat1, "");
+                }
+                case "19:00" ->  {
+                    for(int i=0; i<seatStrLen2/3; i++){
+                        int j = i*3;
+                        seatTemp[i] = seat2.substring(j,j+3);
+                        seat = seat.replace(seatTemp[i], "");
+                    }
+                    count = count - count2;
+                    seat = seat.replace(seat2, "");
+                }
+            }
             int  price = count * 30000;
             Random rand = new Random();
             int upperbound = 100;
@@ -107,13 +122,26 @@ public class Seat2 extends javax.swing.JFrame {
             int int_random2 = rand.nextInt(upperbound);
             int int_random3 = rand.nextInt(upperbound);
             int int_random4 = rand.nextInt(upperbound);
-            String time = jComboBox1.getSelectedItem().toString();
-            JOptionPane.showMessageDialog(Seat2.this, "Movie Name : Black Panther" + "\n" + "Time : " + time + "\n" + "Seats : " + seat + "\n" + "Price : " + price + "\n" + "Receipt ID : " + int_random1 + int_random2 + int_random3 + int_random4);
-            count1 = count1 + count;
-            seat1 = seat1 + seat;
+            JOptionPane.showMessageDialog(Seat2.this, "Movie Name : Midnight in Paris" + "\n" + "Time : " + time + "\n" + "Seats : " + seat + "\n" + "Price : " + price + "\n" + "Receipt ID : " + int_random1 + int_random2 + int_random3 + int_random4);
+            switch(time){
+                case "13:00" : {
+                    count1 = count1 + count;
+                    seat1 = seat1 + seat;
+                    seatStrLen1 = seat1.length();
+                    break;
+                }
+                case "19:00" : {
+                    count2 = count2 + count;
+                    seat2 = seat2 + seat;
+                    seatStrLen2 = seat2.length();
+                    break;
+                }
+            }
             count = 0;
             seat = "";
-            seatStrLen = seat1.length();
+            for(int i=0; i<16; i++){
+                seatTemp[i] = "";
+            }
         }
     }
 
@@ -217,9 +245,13 @@ public class Seat2 extends javax.swing.JFrame {
         jToggleButton16.setPreferredSize(new java.awt.Dimension(50, 24));
 
         jLabel4.setText("Jam Tayang  : ");
-        jLabel4.setPreferredSize(new java.awt.Dimension(74, 16));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "13.00", "19.00" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "13:00", "19:00" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Print..");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -370,6 +402,236 @@ public class Seat2 extends javax.swing.JFrame {
             jToggleButton16.setEnabled(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        String time = jComboBox1.getSelectedItem().toString();
+        switch (time){
+            case "13:00" : {
+                    jToggleButton1.setSelected(false);
+                    jToggleButton1.setEnabled(true);
+                    jToggleButton2.setSelected(false);
+                    jToggleButton2.setEnabled(true);
+                    jToggleButton3.setSelected(false);
+                    jToggleButton3.setEnabled(true);
+                    jToggleButton4.setSelected(false);
+                    jToggleButton4.setEnabled(true);
+                    jToggleButton5.setSelected(false);
+                    jToggleButton5.setEnabled(true);
+                    jToggleButton6.setSelected(false);
+                    jToggleButton6.setEnabled(true);
+                    jToggleButton7.setSelected(false);
+                    jToggleButton7.setEnabled(true);
+                    jToggleButton8.setSelected(false);
+                    jToggleButton8.setEnabled(true);
+                    jToggleButton9.setSelected(false);
+                    jToggleButton9.setEnabled(true);
+                    jToggleButton10.setSelected(false);
+                    jToggleButton10.setEnabled(true);
+                    jToggleButton11.setSelected(false);
+                    jToggleButton11.setEnabled(true);
+                    jToggleButton12.setSelected(false);
+                    jToggleButton12.setEnabled(true);
+                    jToggleButton13.setSelected(false);
+                    jToggleButton13.setEnabled(true);
+                    jToggleButton14.setSelected(false);
+                    jToggleButton14.setEnabled(true);
+                    jToggleButton15.setSelected(false);
+                    jToggleButton15.setEnabled(true);
+                    jToggleButton16.setSelected(false);
+                    jToggleButton16.setEnabled(true);
+                    
+                    for(int i=0; i<seatStrLen1/3; i++){
+                        int j = i*3;
+                        seatTemp[i] = seat1.substring(j,j+3);
+                    }
+                    for(int i=0; i<16; i++){
+                        System.out.println(seatTemp[i]);
+                    }
+                    for(int i=0; i<16 ; i++){
+                        if("A1 ".equals(seatTemp[i])){
+                            jToggleButton1.setSelected(true);
+                            jToggleButton1.setEnabled(false);
+                        }
+                        if("A2 ".equals(seatTemp[i])){
+                            jToggleButton2.setSelected(true);
+                            jToggleButton2.setEnabled(false);
+                        }
+                        if("A3 ".equals(seatTemp[i])){
+                            jToggleButton3.setSelected(true);
+                            jToggleButton3.setEnabled(false);
+                        }
+                        if("A4 ".equals(seatTemp[i])){
+                            jToggleButton4.setSelected(true);
+                            jToggleButton4.setEnabled(false);
+                        }
+                        if("B1 ".equals(seatTemp[i])){
+                            jToggleButton5.setSelected(true);
+                            jToggleButton5.setEnabled(false);
+                        }
+                        if("B2 ".equals(seatTemp[i])){
+                            jToggleButton6.setSelected(true);
+                            jToggleButton6.setEnabled(false);
+                        }
+                        if("B3 ".equals(seatTemp[i])){
+                            jToggleButton7.setSelected(true);
+                            jToggleButton7.setEnabled(false);
+                        }
+                        if("B4 ".equals(seatTemp[i])){
+                            jToggleButton8.setSelected(true);
+                            jToggleButton8.setEnabled(false);
+                        }
+                        if("C1 ".equals(seatTemp[i])){
+                            jToggleButton9.setSelected(true);
+                            jToggleButton9.setEnabled(false);
+                        }
+                        if("C2 ".equals(seatTemp[i])){
+                            jToggleButton10.setSelected(true);
+                            jToggleButton10.setEnabled(false);
+                        }
+                        if("C3 ".equals(seatTemp[i])){
+                            jToggleButton11.setSelected(true);
+                            jToggleButton11.setEnabled(false);
+                        }
+                        if("C4 ".equals(seatTemp[i])){
+                            jToggleButton12.setSelected(true);
+                            jToggleButton12.setEnabled(false);
+                        }
+                        if("D1 ".equals(seatTemp[i])){
+                            jToggleButton13.setSelected(true);
+                            jToggleButton13.setEnabled(false);
+                        }
+                        if("D2 ".equals(seatTemp[i])){
+                            jToggleButton14.setSelected(true);
+                            jToggleButton14.setEnabled(false);
+                        }
+                        if("D3 ".equals(seatTemp[i])){
+                            jToggleButton15.setSelected(true);
+                            jToggleButton15.setEnabled(false);
+                        }
+                        if("D4 ".equals(seatTemp[i])){
+                            jToggleButton16.setSelected(true);
+                            jToggleButton16.setEnabled(false);
+                        }
+                    }
+                    for(int i=0; i<16; i++){
+                        seatTemp[i] = "";
+                    }
+                    break;
+                }
+            case "19:00" : {
+                    jToggleButton1.setSelected(false);
+                    jToggleButton1.setEnabled(true);
+                    jToggleButton2.setSelected(false);
+                    jToggleButton2.setEnabled(true);
+                    jToggleButton3.setSelected(false);
+                    jToggleButton3.setEnabled(true);
+                    jToggleButton4.setSelected(false);
+                    jToggleButton4.setEnabled(true);
+                    jToggleButton5.setSelected(false);
+                    jToggleButton5.setEnabled(true);
+                    jToggleButton6.setSelected(false);
+                    jToggleButton6.setEnabled(true);
+                    jToggleButton7.setSelected(false);
+                    jToggleButton7.setEnabled(true);
+                    jToggleButton8.setSelected(false);
+                    jToggleButton8.setEnabled(true);
+                    jToggleButton9.setSelected(false);
+                    jToggleButton9.setEnabled(true);
+                    jToggleButton10.setSelected(false);
+                    jToggleButton10.setEnabled(true);
+                    jToggleButton11.setSelected(false);
+                    jToggleButton11.setEnabled(true);
+                    jToggleButton12.setSelected(false);
+                    jToggleButton12.setEnabled(true);
+                    jToggleButton13.setSelected(false);
+                    jToggleButton13.setEnabled(true);
+                    jToggleButton14.setSelected(false);
+                    jToggleButton14.setEnabled(true);
+                    jToggleButton15.setSelected(false);
+                    jToggleButton15.setEnabled(true);
+                    jToggleButton16.setSelected(false);
+                    jToggleButton16.setEnabled(true);
+                    
+                    for(int i=0; i<seatStrLen2/3; i++){
+                        int j = i*3;
+                        seatTemp[i] = seat2.substring(j,j+3);
+                    }
+                    for(int i=0; i<16; i++){
+                        System.out.println(seatTemp[i]);
+                    }
+                    for(int i=0; i<16 ; i++){
+                        if("A1 ".equals(seatTemp[i])){
+                            jToggleButton1.setSelected(true);
+                            jToggleButton1.setEnabled(false);
+                        }
+                        if("A2 ".equals(seatTemp[i])){
+                            jToggleButton2.setSelected(true);
+                            jToggleButton2.setEnabled(false);
+                        }
+                        if("A3 ".equals(seatTemp[i])){
+                            jToggleButton3.setSelected(true);
+                            jToggleButton3.setEnabled(false);
+                        }
+                        if("A4 ".equals(seatTemp[i])){
+                            jToggleButton4.setSelected(true);
+                            jToggleButton4.setEnabled(false);
+                        }
+                        if("B1 ".equals(seatTemp[i])){
+                            jToggleButton5.setSelected(true);
+                            jToggleButton5.setEnabled(false);
+                        }
+                        if("B2 ".equals(seatTemp[i])){
+                            jToggleButton6.setSelected(true);
+                            jToggleButton6.setEnabled(false);
+                        }
+                        if("B3 ".equals(seatTemp[i])){
+                            jToggleButton7.setSelected(true);
+                            jToggleButton7.setEnabled(false);
+                        }
+                        if("B4 ".equals(seatTemp[i])){
+                            jToggleButton8.setSelected(true);
+                            jToggleButton8.setEnabled(false);
+                        }
+                        if("C1 ".equals(seatTemp[i])){
+                            jToggleButton9.setSelected(true);
+                            jToggleButton9.setEnabled(false);
+                        }
+                        if("C2 ".equals(seatTemp[i])){
+                            jToggleButton10.setSelected(true);
+                            jToggleButton10.setEnabled(false);
+                        }
+                        if("C3 ".equals(seatTemp[i])){
+                            jToggleButton11.setSelected(true);
+                            jToggleButton11.setEnabled(false);
+                        }
+                        if("C4 ".equals(seatTemp[i])){
+                            jToggleButton12.setSelected(true);
+                            jToggleButton12.setEnabled(false);
+                        }
+                        if("D1 ".equals(seatTemp[i])){
+                            jToggleButton13.setSelected(true);
+                            jToggleButton13.setEnabled(false);
+                        }
+                        if("D2 ".equals(seatTemp[i])){
+                            jToggleButton14.setSelected(true);
+                            jToggleButton14.setEnabled(false);
+                        }
+                        if("D3 ".equals(seatTemp[i])){
+                            jToggleButton15.setSelected(true);
+                            jToggleButton15.setEnabled(false);
+                        }
+                        if("D4 ".equals(seatTemp[i])){
+                            jToggleButton16.setSelected(true);
+                            jToggleButton16.setEnabled(false);
+                        }
+                    }
+                    for(int i=0; i<16; i++){
+                        seatTemp[i] = "";
+                    }
+                    break;
+            }
+        }
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -398,8 +660,11 @@ public class Seat2 extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     private String seat = "";
     private String seat1 = "";
+    private String seat2 = "";
     private String[] seatTemp = {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""};
     private int count = 0;
     private int count1 = 0;
-    private int seatStrLen = 0;
+    private int count2 = 0;
+    private int seatStrLen1 = 0;
+    private int seatStrLen2 = 0;
 }
