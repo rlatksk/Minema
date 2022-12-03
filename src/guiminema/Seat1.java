@@ -102,6 +102,12 @@ public class Seat1 extends javax.swing.JFrame {
             }
 
             count = count - count1;
+
+
+            seat = seat.replace(seat1, "");
+//            System.out.println(seat);
+//            System.out.println(seat1);
+ 
             String title = "Black Panther";
             int  price = count * 30000;
             Random rand = new Random();
