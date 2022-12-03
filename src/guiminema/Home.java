@@ -133,12 +133,10 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Seat1 st1 = new Seat1();
         st1.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Seat2 st2 = new Seat2();
         st2.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -187,4 +185,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
+    Seat1 st1 = new Seat1();
+    Seat2 st2 = new Seat2();
 }
