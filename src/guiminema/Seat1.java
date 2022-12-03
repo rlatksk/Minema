@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
+import java.util.Random;
 
 /**
  *
@@ -103,8 +104,14 @@ public class Seat1 extends javax.swing.JFrame {
             count = count - count1;
             String title = "Black Panther";
             int  price = count * 30000;
+            Random rand = new Random();
+            int upperbound = 100;
+            int int_random1 = rand.nextInt(upperbound);
+            int int_random2 = rand.nextInt(upperbound);
+            int int_random3 = rand.nextInt(upperbound);
+            int int_random4 = rand.nextInt(upperbound);
             String time = jComboBox1.getSelectedItem().toString();
-            JOptionPane.showMessageDialog(Seat1.this, "Movie Name : Black Panther" + "\n" + "Time : " + time + "\n" + "Seats : " + seat + "\n" + "Price : " + price);
+            JOptionPane.showMessageDialog(Seat1.this, "Movie Name : Black Panther" + "\n" + "Time : " + time + "\n" + "Seats : " + seat + "\n" + "Price : " + price + "\n" + "Receipt ID : " + int_random1 + int_random2 + int_random3 + int_random4);
             count1 = count1 + count;
             seat1 = seat1 + seat;
             count = 0;
@@ -380,38 +387,6 @@ public class Seat1 extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Seat1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Seat1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Seat1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Seat1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Seat1().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
