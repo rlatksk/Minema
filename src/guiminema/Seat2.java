@@ -7,6 +7,8 @@ package guiminema;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.Random;
 import javax.swing.JOptionPane;
@@ -117,12 +119,14 @@ public class Seat2 extends javax.swing.JFrame {
                     seat = seat.replace(seat2, "");
                 }
             }
+            
             int  price = count * 30000;
             Random rand = new Random();
             int upperbound = 100;
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             Date date = jDateChooser1.getDate();
             String dateTime = (String)sdf.format(jDateChooser1.getDate());
+            
             int int_random1 = rand.nextInt(upperbound);
             int int_random2 = rand.nextInt(upperbound);
             int int_random3 = rand.nextInt(upperbound);
@@ -266,6 +270,14 @@ public class Seat2 extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        LocalDate today = LocalDate.now();
+        ZoneId systemTimeZone = ZoneId.systemDefault();
+        Date min = Date.from(today.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        LocalDate tomorrow = today.plusDays(1);
+        Date max = Date.from(tomorrow.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        jDateChooser1.setMinSelectableDate(min);
+        jDateChooser1.setMaxSelectableDate(max);
 
         jLabel2.setText("Tanggal :");
         jLabel2.setPreferredSize(new java.awt.Dimension(54, 24));

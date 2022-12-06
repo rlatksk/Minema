@@ -315,6 +315,9 @@
       </Events>
     </Component>
     <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="LocalDate today = LocalDate.now();&#xa;ZoneId systemTimeZone = ZoneId.systemDefault();&#xa;Date min = Date.from(today.atStartOfDay(ZoneId.systemDefault()).toInstant());&#xa;LocalDate tomorrow = today.plusDays(1);&#xa;Date max = Date.from(tomorrow.atStartOfDay(ZoneId.systemDefault()).toInstant());&#xa;jDateChooser1.setMinSelectableDate(min);      &#xa;jDateChooser1.setMaxSelectableDate(max);"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>

@@ -7,11 +7,11 @@ package guiminema;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Date;
-import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import java.util.Random;
+import java.time.LocalDate;
 
 /**
  *
@@ -123,18 +123,18 @@ public class Seat1 extends javax.swing.JFrame {
                 }
             }
  
-            String title = "Black Panther";
             int  price = count * 30000;
             Random rand = new Random(); 
             int upperbound = 100;
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             Date date = jDateChooser1.getDate();
             String dateTime = (String)sdf.format(jDateChooser1.getDate());
+            
             int int_random1 = rand.nextInt(upperbound);
             int int_random2 = rand.nextInt(upperbound);
             int int_random3 = rand.nextInt(upperbound);
             int int_random4 = rand.nextInt(upperbound);
-            JOptionPane.showMessageDialog(Seat1.this, "Movie Name : Black Panther" + "\n" + "Time : " + time + "\n" + "Seats : " + seat + "\n" + "Price : " + price + "\n" + "Tanggal : " + dateTime + "\n" + "Receipt ID : " + int_random1 + int_random2 + int_random3 + int_random4);
+            JOptionPane.showMessageDialog(Seat1.this, "Movie Name : Black Panther" + "\n" + "Time : " + time + "\n" + "Seats : " + seat + "\n" + "Price : " + price + "\n" + "Date : " + dateTime + "\n" + "Receipt ID : " + int_random1 + int_random2 + int_random3 + int_random4);
             switch(time){
                 case "10:00" : {
                     count1 = count1 + count;
@@ -277,6 +277,14 @@ public class Seat1 extends javax.swing.JFrame {
         });
 
         jLabel2.setText("Tanggal : ");
+
+        LocalDate today = LocalDate.now();
+        ZoneId systemTimeZone = ZoneId.systemDefault();
+        Date min = Date.from(today.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        LocalDate tomorrow = today.plusDays(1);
+        Date max = Date.from(tomorrow.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        jDateChooser1.setMinSelectableDate(min);
+        jDateChooser1.setMaxSelectableDate(max);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
