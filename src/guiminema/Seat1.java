@@ -30,6 +30,13 @@ public class Seat1 extends javax.swing.JFrame {
         jButton1.addActionListener(btnHandler);
     }
     
+    public Seat1(String title) {
+        initComponents();
+        this.title = title;
+        ButtonHandler btnHandler = new ButtonHandler();
+        jButton1.addActionListener(btnHandler);
+    }
+    
     private class ButtonHandler implements ActionListener {
         
         @Override
@@ -159,7 +166,7 @@ public class Seat1 extends javax.swing.JFrame {
             int int_random2 = rand.nextInt(upperbound);
             int int_random3 = rand.nextInt(upperbound);
             int int_random4 = rand.nextInt(upperbound);
-            JOptionPane.showMessageDialog(Seat1.this, "Movie Name : Black Panther" + "\n" + "Time : " + time + "\n" + "Seats : " + seat + "\n" + "Price : " + price + "\n" + "Date : " + dateTime + "\n" + "Receipt ID : " + int_random1 + int_random2 + int_random3 + int_random4);
+            JOptionPane.showMessageDialog(Seat1.this, "Movie Name : " + title + "\n" + "Time : " + time + "\n" + "Seats : " + seat + "\n" + "Price : " + price + "\n" + "Date : " + dateTime + "\n" + "Receipt ID : " + int_random1 + int_random2 + int_random3 + int_random4);
             
             if (dateTime.equals(dateTimeCurrent)){
                 switch(time){
@@ -211,8 +218,6 @@ public class Seat1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDatePickerUtil1 = new org.jdatepicker.util.JDatePickerUtil();
-        utilCalendarModel1 = new org.jdatepicker.impl.UtilCalendarModel();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
         jToggleButton3 = new javax.swing.JToggleButton();
@@ -1414,7 +1419,6 @@ public class Seat1 extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
-    private org.jdatepicker.util.JDatePickerUtil jDatePickerUtil1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -1434,7 +1438,6 @@ public class Seat1 extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton7;
     private javax.swing.JToggleButton jToggleButton8;
     private javax.swing.JToggleButton jToggleButton9;
-    private org.jdatepicker.impl.UtilCalendarModel utilCalendarModel1;
     // End of variables declaration//GEN-END:variables
     private String seat = "";
     private String seat1 = "";
@@ -1452,5 +1455,5 @@ public class Seat1 extends javax.swing.JFrame {
     private int seatStrLen3 = 0;
     private int seatStrLen4 = 0;
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        
+    public String title;    
 }

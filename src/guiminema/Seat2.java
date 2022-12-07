@@ -29,6 +29,13 @@ public class Seat2 extends javax.swing.JFrame {
         jButton1.addActionListener(btnHandler);
     }
     
+    public Seat2(String title) {
+        initComponents();
+        this.title = title;
+        Seat2.ButtonHandler btnHandler = new Seat2.ButtonHandler();
+        jButton1.addActionListener(btnHandler);
+    }
+    
     private class ButtonHandler implements ActionListener {
         
         @Override
@@ -158,7 +165,7 @@ public class Seat2 extends javax.swing.JFrame {
             int int_random2 = rand.nextInt(upperbound);
             int int_random3 = rand.nextInt(upperbound);
             int int_random4 = rand.nextInt(upperbound);
-            JOptionPane.showMessageDialog(Seat2.this, "Movie Name : Midnight in Paris" + "\n" + "Time : " + time + "\n" + "Seats : " + seat + "\n" + "Price : " + price + "\n" + "Tanggal : " + dateTime + "\n" + "Receipt ID : " + int_random1 + int_random2 + int_random3 + int_random4);
+            JOptionPane.showMessageDialog(Seat2.this, "Movie Name : " + title + "\n" + "Time : " + time + "\n" + "Seats : " + seat + "\n" + "Price : " + price + "\n" + "Tanggal : " + dateTime + "\n" + "Receipt ID : " + int_random1 + int_random2 + int_random3 + int_random4);
             
             if (dateTime.equals(dateTimeCurrent)){
                 switch(time){
@@ -1444,4 +1451,5 @@ public class Seat2 extends javax.swing.JFrame {
     private int seatStrLen3 = 0;
     private int seatStrLen4 = 0;
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    public String title;
 }
