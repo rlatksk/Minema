@@ -315,8 +315,11 @@
       </Events>
     </Component>
     <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+      <Events>
+        <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="jDateChooser1PropertyChange"/>
+      </Events>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="LocalDate today = LocalDate.now();&#xa;ZoneId systemTimeZone = ZoneId.systemDefault();&#xa;Date min = Date.from(today.atStartOfDay(ZoneId.systemDefault()).toInstant());&#xa;LocalDate tomorrow = today.plusDays(1);&#xa;Date max = Date.from(tomorrow.atStartOfDay(ZoneId.systemDefault()).toInstant());&#xa;jDateChooser1.setMinSelectableDate(min);      &#xa;jDateChooser1.setMaxSelectableDate(max);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="LocalDate today = LocalDate.now();&#xa;ZoneId systemTimeZone = ZoneId.systemDefault();&#xa;Date min = Date.from(today.atStartOfDay(ZoneId.systemDefault()).toInstant());&#xa;LocalDate tomorrow = today.plusDays(1);&#xa;Date max = Date.from(tomorrow.atStartOfDay(ZoneId.systemDefault()).toInstant());&#xa;jDateChooser1.setDate(min);&#xa;jDateChooser1.setMinSelectableDate(min);      &#xa;jDateChooser1.setMaxSelectableDate(max);"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">

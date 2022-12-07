@@ -31,16 +31,13 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jButton1" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" pref="54" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jDateChooser1" max="32767" attributes="0"/>
+                      <Component id="jDateChooser1" min="-2" pref="102" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -102,7 +99,7 @@
                   <Component id="jToggleButton8" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jToggleButton4" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="90" max="32767" attributes="0"/>
+              <EmptySpace min="90" pref="109" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -334,8 +331,11 @@
       </Properties>
     </Component>
     <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+      <Events>
+        <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="jDateChooser1PropertyChange"/>
+      </Events>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="LocalDate today = LocalDate.now();&#xa;ZoneId systemTimeZone = ZoneId.systemDefault();&#xa;Date min = Date.from(today.atStartOfDay(ZoneId.systemDefault()).toInstant());&#xa;LocalDate tomorrow = today.plusDays(1);&#xa;Date max = Date.from(tomorrow.atStartOfDay(ZoneId.systemDefault()).toInstant());&#xa;jDateChooser1.setMinSelectableDate(min);      &#xa;jDateChooser1.setMaxSelectableDate(max);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="LocalDate today = LocalDate.now();&#xa;ZoneId systemTimeZone = ZoneId.systemDefault();&#xa;Date min = Date.from(today.atStartOfDay(ZoneId.systemDefault()).toInstant());&#xa;LocalDate tomorrow = today.plusDays(1);&#xa;Date max = Date.from(tomorrow.atStartOfDay(ZoneId.systemDefault()).toInstant());&#xa;jDateChooser1.setDate(min);&#xa;jDateChooser1.setMinSelectableDate(min);      &#xa;jDateChooser1.setMaxSelectableDate(max);"/>
       </AuxValues>
     </Component>
   </SubComponents>
